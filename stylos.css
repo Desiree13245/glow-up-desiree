@@ -64,8 +64,8 @@ img { max-width: 100%; height: auto; }
   height: 45px; /* un poco más pequeño */
   width: auto;
 }
-.logo-left  { left: 15px; }   /* más cerca del título */
-.logo-right { right: 15px; }  /* más cerca del título */
+.logo-left  { left: 40px; }   /* más cerca del título */
+.logo-right { right: 40px; }  /* más cerca del título */
 
 
 /* En pantallas pequeñas, mantiene la proporción y evita solaparse */
@@ -73,7 +73,7 @@ img { max-width: 100%; height: auto; }
   .logo-left, .logo-right {
     position: static;
     transform: none;
-    height: 34px;
+    height: 44px;
     margin: 0 4px;
   }
 
@@ -347,6 +347,7 @@ img { max-width: 100%; height: auto; }
   .cover-text p  { font-size: .8rem; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
+
 
 
 
