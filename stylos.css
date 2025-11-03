@@ -8,7 +8,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body, html {
+html, body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -29,22 +29,21 @@ img { max-width: 100%; height: auto; }
 }
 
 .header-line {
+  position: relative;            /* base para posicionar logos en desktop */
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  flex-wrap: wrap;
-  gap: .5rem;
 }
 
+/* TÍTULO CENTRADO CON ESPACIO LATERAL PARA LOGOS */
 .mag-header h1 {
   font-family: 'Playfair Display', serif;
   color: var(--accent);
   font-size: 2.2rem;
   font-weight: 700;
-  margin: 0 1rem;
-  z-index: 2;
-  width: 100%;
+  margin: 0;
+  padding: 0 96px;               /* deja hueco para los logos izq/der */
+  line-height: 1.2;
 }
 
 .mag-header .subtitle {
@@ -56,13 +55,16 @@ img { max-width: 100%; height: auto; }
   text-shadow: 0 0 15px var(--glow);
 }
 
+/* LOGOS: PC (izquierda/derecha flanqueando el título) */
 .logo-left, .logo-right {
-  position: static;
-  width: 50px;
-  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50px;
+  width: auto;
 }
-
-.logo-right { margin-left: auto; }
+.logo-left  { left: 24px; }
+.logo-right { right: 24px; }
 
 /* ======= FLIPBOOK ======= */
 .flipbook {
@@ -92,7 +94,12 @@ img { max-width: 100%; height: auto; }
 .page p { color: #333; }
 
 /* ======= PORTADA ======= */
-.cover { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .cover img {
   width: 100%;
   height: 100%;
@@ -108,13 +115,13 @@ img { max-width: 100%; height: auto; }
   text-align: center;
   color: #fff;
   text-shadow: 0 2px 10px rgba(0,0,0,.6);
-  padding: 1rem;
+  padding: .75rem 1rem;
   border-radius: 12px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.25);
 }
-.cover-text h2 { font-size: clamp(1.6rem, 3.2vw, 2.6rem); margin: .2rem 0; }
-.cover-text h3 { font-size: clamp(1rem, 2.2vw, 1.4rem); margin: .2rem 0; }
-.cover-text p  { font-size: clamp(.9rem, 1.8vw, 1.1rem); }
+.cover-text h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); margin:.15rem 0; }
+.cover-text h3 { font-size: clamp(1rem, 2.2vw, 1.3rem);  margin:.15rem 0; }
+.cover-text p  { font-size: clamp(.9rem, 1.8vw, 1.05rem); }
 
 /* ======= SECCIONES ======= */
 .section-title {
@@ -124,26 +131,22 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 0.5rem;
 }
 
+/* Galería en GRID (sin duplicar reglas) */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: .75rem;
   margin-top: 1rem;
 }
-
 .gallery img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s, filter 0.3s;
   object-fit: cover;
 }
-
-.gallery img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
+.gallery img:hover { transform: scale(1.05); filter: brightness(1.2); }
 
 /* ======= CONTROLES ======= */
 .controls {
@@ -258,100 +261,56 @@ img { max-width: 100%; height: auto; }
 @keyframes fadeIn { from {opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
 
 /* ======= MEDIA QUERIES ======= */
-@media (max-width: 768px) {
-  .logo-left, .logo-right { height: 40px; }
-  .mag-header h1 { font-size: 1.6rem; margin: 0.5rem 0; }
+/* Tablet */
+@media (max-width: 992px) {
+  .mag-header h1 { padding: 0 84px; }
+  .logo-left, .logo-right { height: 46px; }
 }
-
+/* Móvil */
 @media (max-width: 600px) {
-  /* HEADER */
-  .logo-left, .logo-right { width: 42px; height: auto; }
-  .logo-right { display: none; }
-  .mag-header h1 { font-size: 1.3rem; line-height: 1.2; }
-  .subtitle { font-size: .9rem; text-align: center; }
+  /* HEADER: fila con logos y título centrado sin solaparse */
+  .header-line {
+    display: grid;
+    grid-template-columns: auto 1fr auto;  /* logo - título - logo */
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem 1rem;
+  }
+  .logo-left, .logo-right {
+    position: static;         /* quita absoluto en móvil */
+    transform: none;
+    height: 34px;
+    width: auto;
+  }
+  .mag-header h1 {
+    padding: 0;               /* el grid ya crea huecos */
+    font-size: 1.15rem;
+    line-height: 1.2;
+    margin: 0;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: .85rem;
+    text-align: center;
+    margin-top: .25rem;
+  }
 
-  /* PORTADA */
+  /* PORTADA: texto pequeño y pegado abajo */
   .cover img {
     height: 68vh;
     object-fit: cover;
     object-position: center;
   }
   .cover-text {
-    bottom: 6%;
+    bottom: 4%;
     max-width: 92%;
+    padding: .5rem .6rem;
+    background: rgba(0,0,0,0.22);
   }
-  .cover-text h2 { font-size: 1.3rem; }
-  .cover-text h3 { font-size: .95rem; }
-  .cover-text p  { font-size: .85rem; }
+  .cover-text h2 { font-size: 1rem; }
+  .cover-text h3 { font-size: .85rem; }
+  .cover-text p  { font-size: .8rem; }
 
   /* GALERÍA */
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
-
-
-
-/* === FIX DEFINITIVO MOVIL: HEADER APILADO Y PORTADA SIN SOLAPES === */
-@media (max-width: 600px) {
-  /* HEADER: apilar contenido para evitar solapes */
-  .header-line {
-    display: flex;
-    flex-direction: column;   /* << apilado vertical */
-    align-items: center;
-    justify-content: center;
-    gap: .35rem;
-    padding: .6rem 1rem;
-  }
-
-  .logo-left, .logo-right {
-    position: static;         /* fuera de posición absoluta */
-    width: 34px;              /* más pequeño en móvil */
-    height: auto;
-  }
-
-  .logo-right { display: none; }  /* ocultamos el derecho en móvil */
-
-  .mag-header h1 {
-    font-size: 1.15rem;       /* más pequeño para que no rompa */
-    line-height: 1.2;
-    margin: 0;
-    text-align: center;
-    width: 100%;
-  }
-
-  .subtitle {
-    font-size: .85rem;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-  }
-
-  /* PORTADA: que el texto NO esté sobre la foto */
-  .cover { overflow: visible; }
-  .cover img {
-    width: 100%;
-    height: auto;             /* deja a la imagen su altura natural */
-    object-fit: cover;
-  }
-
-  /* Mueve el texto debajo de la imagen en móvil */
-  .cover-text {
-    position: static;         /* << ya NO es absoluto */
-    transform: none;
-    background: transparent;  /* sin caja encima de la foto */
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,.6);
-    padding: .5rem 0 0;
-    margin: .5rem auto 0;
-    max-width: 92%;
-    text-align: center;
-  }
-
-  .cover-text h2 { font-size: 1.15rem; }  /* “Vol. 1” controlado */
-  .cover-text h3 { font-size: .95rem; }
-  .cover-text p  { font-size: .85rem; }
-}
-
-
-
-
-
