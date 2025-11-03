@@ -349,6 +349,77 @@ img { max-width: 100%; height: auto; }
 }
 
 
+/* === Estilo mejorado para sección Ebooks === */
+.ebooks-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.ebook-card {
+  display: flex;
+  flex-direction: column; /* imagen arriba, texto abajo */
+  align-items: center;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 220px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.ebook-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.ebook-card span {
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.ebook-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ffb3da;
+}
+
+.ebook-card:hover img {
+  transform: scale(1.05);
+}
+
+.ebook-card:hover span {
+  color: #ff2d88;
+}
+
+/* En pantallas grandes: imagen a la izquierda, texto al lado */
+@media (min-width: 900px) {
+  .ebook-card {
+    flex-direction: row;
+    align-items: center;
+    width: 600px;
+    gap: 1.2rem;
+  }
+
+  .ebook-card img {
+    width: 180px;
+    margin: 0;
+  }
+
+  .ebook-card span {
+    text-align: left;
+    font-size: 1rem;
+  }
+}
+
+
 
 
 
