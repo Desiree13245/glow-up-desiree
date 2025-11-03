@@ -1,0 +1,226 @@
+/* ======= ESTILO REVISTA DOSMILERA ======= */
+:root {
+  --bg: linear-gradient(to top, #000,#ff2d88,#DEA4D2,#fff);
+  --accent: #ff2d88;
+  --text: #f4f4f4;
+  --glow: #c5c5ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ======= CABECERA ======= */
+.mag-header {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(180deg, rgba(255,45,136,0.15), transparent);
+  border-bottom: 2px solid var(--accent);
+  box-shadow: 0 0 25px rgba(255,45,136,0.3);
+  text-align: center;
+  position: relative;
+}
+
+.header-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mag-header h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--accent);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 1rem;
+  z-index: 2;
+}
+
+.mag-header .subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.8;
+  padding: 0.8rem;
+  color: #000;
+  text-shadow: 0 0 15px var(--glow);
+}
+
+.logo-left, .logo-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50px;
+}
+
+.logo-left { left: 15%; }
+.logo-right { right: 15%; }
+
+/* ======= FLIPBOOK ======= */
+.flipbook {
+  perspective: 2000px;
+  width: 85%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  position: relative;
+  height: auto;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background: rgba(0,0,0,0.5);
+  border-radius: 15px;
+  padding: 2rem;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.05);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.page.active { opacity: 1; pointer-events: auto; }
+.page p { color: #333; }
+
+/* ======= PORTADA ======= */
+.cover { position: relative; width: 100%; height: 100%; }
+.cover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: brightness(0.9) contrast(1.1);
+}
+.cover-text {
+  position: absolute;
+  bottom: 2rem; left: 2rem;
+  color: #fff;
+  text-shadow: 0 0 10px var(--accent);
+  background: rgba(0,0,0,0.3);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* ======= SECCIONES ======= */
+.section-title { font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.6rem; margin-bottom: 0.5rem; }
+
+.gallery {
+  display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;
+}
+
+.gallery img {
+  width: calc(50% - 1rem);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.gallery img:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+/* ======= CONTROLES ======= */
+.controls {
+  text-align: center;
+  margin: 1.5rem;
+}
+.controls button {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.controls button:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+/* ======= LIGHTBOX ======= */
+#lightbox {
+  position: fixed; inset: 0;
+  display: flex; justify-content: center; align-items: center;
+  background: rgba(0,0,0,0.85);
+  visibility: hidden; opacity: 0;
+  transition: opacity 0.4s ease; z-index: 999;
+}
+#lightbox.active { visibility: visible; opacity: 1; }
+#lightbox img {
+  max-width: 90%; max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 40px var(--glow);
+}
+.lightbox-prev, .lightbox-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-size: 2rem; background: rgba(0,0,0,0.3);
+  color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;
+  z-index: 1001;
+}
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,45,136,0.7); }
+
+/* ======= BOTÓN VOLVER AL INICIO ======= */
+.scroll-btn {
+  position: fixed; bottom: 30px; right: 30px;
+  background: var(--accent); color: #fff;
+  border: none; border-radius: 50%;
+  width: 55px; height: 55px;
+  font-size: 24px;
+  display: none; justify-content: center; align-items: center;
+  box-shadow: 0 0 15px var(--glow); cursor: pointer;
+  z-index: 1000; transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.scroll-btn:hover { transform: scale(1.1); opacity: 0.9; }
+
+/* ======= TARJETAS EBOOK ======= */
+.ebook-card {
+  display: flex; flex-direction: column; align-items: center;
+  text-decoration: none; color: #ff2d88;
+  padding: 1rem; border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease, transform 0.5s ease;
+  perspective: 1000px;
+}
+.ebook-card img {
+  width: 180px; border-radius: 10px; margin-bottom: 0.5rem;
+  transform-origin: left center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.ebook-card:hover img { transform: rotateY(-15deg) scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+.ebook-card span { font-weight: 600; font-size: 1rem; text-align: center; margin-top: 0.3rem; }
+.ebook-card:hover { transform: scale(1.05); background: rgba(255,255,255,0.7); box-shadow: 0 0 25px #ffc1e3; }
+
+/* ======= TOP NAV & DROPDOWN ======= */
+.top-nav { display: flex; justify-content: flex-end; gap: 1rem; align-items: center; padding-right: 2rem; }
+.top-nav a { text-decoration: none; color: #ff2d88; font-weight: 600; padding: 0.5rem 1rem; border: 2px solid #ff2d88; border-radius: 999px; transition: all 0.3s ease; font-size: 1rem; cursor: pointer; }
+.top-nav a:hover { background: #ff2d88; color: #fff; box-shadow: 0 0 15px #c5c5ff; }
+
+.dropdown { position: relative; display: inline-block; }
+.dropbtn { background: transparent; color: #ff2d88; border: 2px solid #ff2d88; padding: 0.4rem 0.8rem; border-radius: 999px; cursor: pointer; font-weight: 600; }
+.dropbtn:hover { background: #ff2d88; color: #fff; box-shadow: 0 0 15px #c5c5ff; }
+
+.dropdown-content {
+  display: none; position: absolute; right: 0;
+  background-color: rgba(255,255,255,0.95); min-width: 160px;
+  border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: right; flex-direction: column; z-index: 1;
+}
+.dropdown-content a { color: #333; padding: 0.5rem 1rem; display: block; text-decoration: none; font-weight: 500; border-radius: 10px; transition: all 0.3s ease; }
+.dropdown-content a:hover { background-color: #ffdae6; color: #ff2d88; }
+.dropdown.show .dropdown-content { display: block; animation: fadeIn 0.3s ease forwards; }
+@keyframes fadeIn { from {opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
+
+/* ======= MEDIA QUERIES ======= */
+@media (max-width: 768px) { .logo-left,.logo-right { height:40px; } .mag-header h1 { font-size:1.6rem; margin:0 0.5rem; } .gallery img{width:calc(50%-0.5rem);} }
+@media (max-width: 480px) { .logo-left,.logo-right{height:35px;} .mag-header h1{font-size:1.4rem; margin:0 0.5rem;} .gallery img{width:100%;} .top-nav{flex-direction:column;gap:0.5rem;} .dropdown-content{position:relative;width:100%;} }
