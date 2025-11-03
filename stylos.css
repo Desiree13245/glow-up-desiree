@@ -64,8 +64,31 @@ img { max-width: 100%; height: auto; }
   height: 45px; /* un poco más pequeño */
   width: auto;
 }
-.logo-left  { left: 10px; }   /* más cerca del título */
-.logo-right { right: 10px; }  /* más cerca del título */
+.logo-left  { left: 5px; }   /* más cerca del título */
+.logo-right { right: 5px; }  /* más cerca del título */
+
+
+/* En pantallas pequeñas, mantiene la proporción y evita solaparse */
+@media (max-width: 600px) {
+  .logo-left, .logo-right {
+    position: static;
+    transform: none;
+    height: 34px;
+    margin: 0 4px;
+  }
+
+  .header-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem; /* ajusta la separación entre título y logos */
+  }
+}
+
+
+
+
+
 
 /* ======= FLIPBOOK ======= */
 .flipbook {
@@ -324,5 +347,6 @@ img { max-width: 100%; height: auto; }
   .cover-text p  { font-size: .8rem; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
+
 
 
