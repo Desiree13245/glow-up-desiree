@@ -424,3 +424,19 @@ img { max-width: 100%; height: auto; }
   }
 }
 
+.contact-link {
+  text-decoration: none;
+  color: #ff2d88;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 2px solid #ff2d88;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.contact-link:hover {
+  background: #ff2d88;
+  color: #fff;
+  box-shadow: 0 0 15px #c5c5ff;
+}
+
+
