@@ -190,7 +190,7 @@ img { max-width: 100%; height: auto; }
 /* ======= SECCIONES ======= */
 .section-title {
   font-family: 'Playfair Display', serif;
-  color: var(--accent);
+  color: black;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
@@ -438,6 +438,7 @@ img { max-width: 100%; height: auto; }
   color: #fff;
   box-shadow: 0 0 15px #c5c5ff;
 }
+
 
 
 
