@@ -398,9 +398,7 @@ img { max-width: 100%; height: auto; }
   }
 
   /* Ocultar flechas del carrusel solo en móvil */
-  .side-arrow {
-    display: none !important;
-  }
+  
 }
 
 
@@ -879,7 +877,7 @@ img { max-width: 100%; height: auto; }
     right: 10px;
   }
 
-  /* 5. HERO: que la imagen quede bien dentro de la tarjeta */
+ 
  
   
 }
@@ -949,6 +947,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
