@@ -825,22 +825,20 @@ img { max-width: 100%; height: auto; }
 
 
 
-/* ===== AJUSTES HERO SOLO PARA MÓVIL — VERSIÓN FINAL ===== */
+
+
+/* ===== AJUSTES HERO SOLO PARA MÓVIL ===== */
 @media (max-width: 600px) {
 
-  /* Eliminar TODOS los espacios extra de todas las páginas */
-  .page {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* Primera página (hero) sin huecos */
+  /* Quitamos la altura mínima gigante en móvil */
+  .page,
   .page:first-of-type {
+    min-height: auto !important;
     padding: 0 !important;
     margin: 0 !important;
   }
 
-  /* Contenedores internos: sin márgenes ni padding */
+  /* Contenedores internos del hero sin márgenes ni padding extra */
   .page .content-box,
   .page-card,
   .hero-card,
@@ -850,7 +848,7 @@ img { max-width: 100%; height: auto; }
     height: auto !important;
   }
 
-  /* La tarjeta del hero ajustada completamente */
+  /* Tarjeta del hero */
   .page:first-of-type .cover {
     width: 100% !important;
     margin: 0 !important;
@@ -859,7 +857,7 @@ img { max-width: 100%; height: auto; }
     overflow: hidden;
   }
 
-  /* Imagen sin huecos arriba ni abajo */
+  /* Imagen bien pegada, sin huecos arriba/abajo */
   .page:first-of-type .cover img {
     width: 100%;
     height: auto;
@@ -869,7 +867,7 @@ img { max-width: 100%; height: auto; }
     padding: 0 !important;
   }
 
-  /* Bloque del texto posicionando correctamente */
+  /* Bloque de texto del hero */
   .page:first-of-type .cover-text {
     left: 1rem !important;
     right: 1rem !important;
@@ -878,7 +876,6 @@ img { max-width: 100%; height: auto; }
     margin: 0 !important;
   }
 
-  /* Ajuste tipografías */
   .page:first-of-type .cover-text h2 {
     font-size: 1.15rem !important;
     line-height: 1.25;
@@ -887,16 +884,10 @@ img { max-width: 100%; height: auto; }
   .page:first-of-type .cover-text h3 {
     font-size: 0.9rem !important;
   }
-
-  /* IMPORTANTE: quita espacio creado por transición de scroll */
-  .page-wrapper,
-  .swiper-slide,
-  .slider-container {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
 }
 
+
+  
 
 
 
