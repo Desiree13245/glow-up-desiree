@@ -731,3 +731,72 @@ img { max-width: 100%; height: auto; }
   background: #ff5aa8;
   transform: scale(1.1);
 }
+
+
+/* ===== AJUSTES SOLO PARA MÓVIL ===== */
+@media (max-width: 600px) {
+
+  /* 1. Cabecera más limpia: quitamos logos grandes y hacemos más pequeño el título */
+  .logo-left,
+  .logo-right {
+    display: none;
+  }
+
+  .mag-header h1 {
+    font-size: 1.4rem;
+    margin: 0.5rem 0 0.2rem;
+  }
+
+  /* 2. Menú centrado pero más pequeñito */
+  .top-nav {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 8px 0 14px;
+  }
+
+  .dropbtn,
+  .top-nav > a.nav-link {
+    font-size: 0.75rem;          /* letras más pequeñas */
+    letter-spacing: 0.12em;
+  }
+
+  /* 3. Portada: foto grande, texto más pequeño */
+  .page:first-of-type .cover img {
+    min-height: 260px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .cover-text {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .cover-text h2 {
+    font-size: 1.3rem;      /* Vol. 1 más pequeño */
+  }
+
+  .cover-text h3 {
+    font-size: 0.9rem;
+  }
+
+  .cover-text p {
+    font-size: 0.8rem;
+  }
+
+  /* 4. Flechas laterales: centradas verticalmente, no tan abajo */
+  .side-arrow {
+    top: 55%;
+    bottom: auto;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+  }
+
+  .side-arrow.left {
+    left: 10px;
+  }
+
+  .side-arrow.right {
+    right: 10px;
+  }
+}
+
