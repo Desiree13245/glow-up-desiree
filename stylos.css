@@ -840,21 +840,22 @@ img { max-width: 100%; height: auto; }
 
   .dropdown-content {
     position: absolute;
-    top: 100%;                  /* justo debajo del botón INICIO */
+    top: 100%;               /* pegado debajo del botón INICIO */
     left: 50%;
     transform: translateX(-50%);
+    width: 200px;
     display: none;
     flex-direction: column;
-    width: min(220px, 80vw);
-    text-align: left;
-    background-color: rgba(255,255,255,0.95);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    z-index: 50;                /* por encima de la portada */
+    background: rgba(255,255,255,0.97);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 0.8rem 0;
+    z-index: 9999;           /* QUE QUEDE POR ENCIMA DE LA TARJETA */
   }
 
   .dropdown-content a {
     padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
   }
 
   .dropdown.show .dropdown-content {
@@ -947,6 +948,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
