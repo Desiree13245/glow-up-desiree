@@ -869,13 +869,6 @@ img { max-width: 100%; height: auto; }
 
   
 
-  /* Galerías: todas las fotos con misma forma y tamaño aproximado */
-  .gallery img {
-    width: 48%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    border-radius: 5px;
-  }
 
  
 
@@ -895,6 +888,7 @@ img { max-width: 100%; height: auto; }
   .cover-text p {
     font-size: 0.8rem;
   }
+
 
 
 
