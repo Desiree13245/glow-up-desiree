@@ -4,21 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Blog de Maquillaje en Zaragoza | Glow Up by Desiree Moncada</title>
-  <meta name="description" content="Consejos de maquillaje y peinados en Zaragoza. Tendencias, trucos y recomendaciones de Desiree Moncada, maquilladora profesional." />
+  <title>Blog de Maquillaje | Glow Up by Desiree Moncada</title>
+  <meta name="description" content="Consejos de maquillaje y peinados. Tendencias, trucos y recomendaciones de Desiree Moncada, maquilladora profesional." />
   <meta name="keywords" content="blog maquillaje, maquilladora Zaragoza, maquillaje de novia, peinados Zaragoza, consejos de maquillaje" />
 
   <!-- OG / Twitter -->
   <meta property="og:title" content="Blog | Glow Up by Desiree" />
-  <meta property="og:description" content="Artículos y consejos de maquillaje profesional en Zaragoza." />
+  <meta property="og:description" content="Artículos y consejos de maquillaje profesional Zaragoza." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://desiree13245.github.io/glow-up-desiree/blog.html" />
-  <meta property="og:image" content="material/portadas/og-blog.jpg" />
+  <meta property="og:url" content="https://desireemoncada.com/blog.html" />
+
+  <meta property="og:image" content="https://desireemoncada.com/material/portadas/og-blog.jpg" />
+<meta name="twitter:image" content="https://desireemoncada.com/material/portadas/og-blog.jpg" />
+
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blog | Glow Up by Desiree" />
   <meta name="twitter:description" content="Consejos y tendencias de maquillaje y peinado." />
-  <meta name="twitter:image" content="material/portadas/og-blog.jpg" />
+  
 
   <!-- Fuentes (añadimos una tipo “lápiz/handwriting”) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,18 +35,39 @@
   <header class="mag-header">
     <div class="header-line">
       <img src="material/logos/logorosapng.png" alt="Logo Izquierda" class="logo-left" />
-      <h1>El Glow Que Necesitas</h1>
+      <h1>EL GLOW QUE NECESITAS</h1>
       <img src="material/logos/logorosapng.png" alt="Logo Derecha" class="logo-right" />
     </div>
-    <p class="subtitle">Encuentra tu esencia | DM</p>
+    
 
-    <nav class="top-nav">
-      <a href="index.html" class="contact-link">Inicio</a>
-      <a href="contacto.html" class="contact-link">Contacto</a>
-      <a href="blog.html" class="contact-link">Blog</a>
-    </nav>
-  </header>
+<nav class="top-nav"> 
+  <!-- Botón INICIO con desplegable -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown()">Inicio ▼</button>
 
+    <div class="dropdown-content" id="dropdownMenu">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#nupcial">Nupcial</a>
+      <a href="index.html#fx">Caracterización & FX</a>
+      <a href="index.html#glitter">Glitter Party</a>
+      <a href="index.html#social">Social & Glam</a>
+      <a href="index.html#peinados">Peinados</a>
+      <a href="index.html#arte">Arte</a>
+      <a href="index.html#ebook">Ebooks</a>
+    </div>
+  </div>
+
+  <!-- Enlaces estilo “SOBRE MÍ / EVENTOS / …” -->
+  <a href="blog.html" class="nav-link">Blog</a>
+  <a href="contacto.html" class="nav-link">Contacto</a>
+</nav>
+
+<script>
+function toggleDropdown() {
+  document.querySelector(".dropdown").classList.toggle("show");
+}
+</script>
+</header>
   <main class="blog-wrap">
     <h2 class="section-title" style="margin-top:1rem;">Blog de belleza y tal vez salseos😉</h2>
 
@@ -96,11 +120,38 @@
   
   </main>
 
-  <footer style="text-align:center; padding:2rem 1rem;">
-    <p>© 2025 Glow Up by Desiree Moncada | Maquilladora profesional</p>
-  </footer>
+<footer class="footer">
+    <h3>SÍGUEME PARA VER MÁS LOOKS</h3>
+    <div class="footer-line"></div>
 
+    <div class="social-icons">
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/desireemt.makeup" target="_blank" class="icon-circle">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@desimoncada" target="_blank" class="icon-circle">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok">
+        </a>
+        
+
+        
+        <!-- Correo -->
+        <a href="mailto:desireemoncadamakeup@outlook.es" class="email-button">
+    📩
+</a>
+
+
+    </div>
+
+    <p class="footer-copy">
+        © 2025 Glow Up by Desiree Moncada — Maquilladora Profesional
+    </p>
+</footer>
   <!-- (Opcional) si quieres reusar tu JS general para botones/scroll arriba, inclúyelo: -->
   <script src="main.js"></script>
+
 </body>
 </html>
