@@ -63,27 +63,7 @@ img { max-width: 100%; height: auto; }
 .logo-left { left: 5%; }
 .logo-right { right: 5%; }
 
-/* ===== LOGO SOLO MOVIL — MUCHO MÁS PEQUEÑO Y ARRIBA ===== */
-@media (max-width: 600px) {
 
-  .hero-logo-mobile {
-    position: absolute;
-    top: 6px;              /* más arriba */
-    left: 6px;             /* pegado a la esquina */
-    width: 28px;           /* MUY pequeño */
-    height: auto;
-    opacity: 0.85;
-    z-index: 20;
-    display: block;
-  }
-}
-
-/* Oculto en pantallas grandes */
-@media (min-width: 601px) {
-  .hero-logo-mobile {
-    display: none !important;
-  }
-}
 
 
 
@@ -916,6 +896,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
