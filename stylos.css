@@ -399,16 +399,6 @@ img { max-width: 100%; height: auto; }
 
   /* Ocultar flechas del carrusel solo en móvil */
   
-}
-
-
-
-
-
-/* ======= TOP NAV & DROPDOWN ======= */
-
-/* ======= TOP NAV & DROPDOWN ======= */
-
 /* Estilo general del menú arriba */
 .top-nav {
   display: flex;
@@ -420,97 +410,11 @@ img { max-width: 100%; height: auto; }
 }
 
 
-/* “Inicio” (botón del dropdown) + enlaces Blog y Contacto */
-.dropbtn,
-.top-nav > a.nav-link {
-  background: transparent;
-  border: none;
-  color: #ff2d88;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  position: relative;
-  padding-bottom: 0.4rem;
-  cursor: pointer;
-}
-
-/* Línea fina debajo (estilo imagen negra) */
-
-/* Línea debajo */
-.dropbtn::after,
-.top-nav > a.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 110%;
-  height: 1px;
-  background: #ff2d88;
-  transform-origin: left;
-  transform: scaleX(0.25);
-  opacity: 0.35;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-
-
-/* Hover: subrayado completo */
-.dropbtn:hover::after,
-.top-nav > a.nav-link:hover::after {
-  transform: scaleX(1);
-  opacity: 1;
-}
-
 /* Enlaces sin subrayado feo por defecto */
 .top-nav a {
   text-decoration: none;
 }
-
-/* ==== Dropdown desplegable ==== */
-.dropdown {
-  position: relative;
-  display: inline-block;
 }
-
-/* AQUÍ SE CONTROLA SI BAJA HACIA ABAJO */
-.dropdown-content {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;              /* SIEMPRE HACIA ABAJO */
-  left: 50%;
-  transform: translateX(-50%);   /* CENTRADO PERFECTO */
-  background-color: rgba(255,255,255,0.95);
-  border-radius: 10px;
-  min-width: 200px;
-  padding: 0.5rem 0;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  text-align: left;
-  z-index: 20;
-}
-
-/* Estilo enlaces del menú */
-.dropdown-content a {
-  padding: 0.6rem 1rem;
-  color: #333;
-  text-decoration: none;
-  display: block;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #ffd6e9;
-  color: #ff2d88;
-}
-
-/* Activar menú */
-.dropdown.show .dropdown-content {
-  display: block;
-  animation: fadeIn 0.25s ease forwards;
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -10px); }
   to   { opacity: 1; transform: translate(-50%, 0); }
@@ -531,20 +435,6 @@ img { max-width: 100%; height: auto; }
     flex-direction:column;
     gap:0.5rem;
   }
-  .dropdown-content{
-    position:relative;
-    width:100%;
-  }
-}
-
-
-
-
-
-
-
-
-
 
 /*para el blog*/
 
@@ -948,6 +838,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
