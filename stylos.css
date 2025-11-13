@@ -350,7 +350,21 @@ img { max-width: 100%; height: auto; }
 }
 
 
+/* Móvil: 2 y 1 (más pequeños) */
+@media (max-width: 600px) {
+  .ebooks-grid .ebook-card {
+    flex: 0 1 calc(50% - 1rem);
+  }
 
+  .ebooks-grid .ebook-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .ebooks-grid .ebook-card span {
+    font-size: 0.85rem;
+  }
+}
 
 
 
@@ -821,9 +835,47 @@ img { max-width: 100%; height: auto; }
   }
 }
 
+  /* HERO: que la imagen quede bien dentro de la tarjeta */
+  .page:first-of-type {
+    padding: 1.2rem 1rem 2rem;   /* menos hueco alrededor */
+  }
+
+  .page:first-of-type .cover {
+    border-radius: 20px;
+    overflow: hidden;            /* la imagen no se sale de la tarjeta */
+  }
+
+  .page:first-of-type .cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .page:first-of-type .cover-text {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .page:first-of-type .cover-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .page:first-of-type .cover-text h3 {
+    font-size: 0.9rem;
+  }
 
   
 
+  /* Galerías: todas las fotos con misma forma y tamaño aproximado */
+  .gallery img {
+    width: 48%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 
  
 
@@ -845,45 +897,6 @@ img { max-width: 100%; height: auto; }
   }
 
 
-
-/* ======== CENTRAR IMAGEN DEL INICIO SOLO EN MÓVIL ======== */
-@media (max-width: 768px) {
-
-  /* Contenedor de la tarjeta */
-  .page-card,
-  .hero-card,
-  .inicio-card,
-  .content-box {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center;
-  }
-
-  /* La imagen del inicio */
-  .page-card img,
-  .hero-img,
-  .inicio-img,
-  .main-photo,
-  .page img {
-    width: 100%;
-    max-width: 330px; /* Ajusta el tamaño máximo */
-    height: auto;
-    margin: 0 auto !important;
-    display: block;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-
-  /* Corrige también el texto que va encima */
-  .page-card .info,
-  .hero-text,
-  .inicio-text {
-    text-align: center !important;
-    align-items: center !important;
-  }
-}
 
 
 
