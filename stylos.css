@@ -824,45 +824,72 @@ img { max-width: 100%; height: auto; }
 }
 
 
-/* ===== AJUSTE TARJETA DE PORTADA EN MÓVIL ===== */
+
+/* ===== AJUSTES HERO SOLO PARA MÓVIL ===== */
 @media (max-width: 600px) {
 
-  /* Quita el espacio gigante debajo de la foto */
+  /* Quitar espacio extra de toda la página */
+  .page,
   .page:first-of-type {
-    padding: 0.2rem 0.2rem 0.85rem !important;
-  }
-
-  .page:first-of-type .cover {
-    margin: 0 auto;
-    width: 100%;
-    border-radius: 20px;
+    margin-bottom: 0 !important;
     padding-bottom: 0 !important;
   }
 
-  /* La imagen debe ocupar toda la tarjeta y estar pegada arriba */
+  /* Quitar espacios de contenedores padres del hero */
+  .page .content-box,
+  .page-card,
+  .hero-card,
+  .cover {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  /* Hero sin aire alrededor */
+  .page:first-of-type {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Contenedor de la tarjeta del hero */
+  .page:first-of-type .cover {
+    width: 100%;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border-radius: 20px;
+    overflow: hidden; /* evita huecos blancos */
+  }
+
+  /* Imagen pegada arriba, sin margen */
   .page:first-of-type .cover img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Ajustar el texto encima para que no tape demasiado */
+  /* Texto del hero más ajustado */
   .page:first-of-type .cover-text {
-    bottom: 0.8rem !important;
-    padding: 0.5rem 0.8rem !important;
+    bottom: 1rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    margin: 0 !important;
+    padding: 0.6rem 0.9rem !important;
   }
 
   .page:first-of-type .cover-text h2 {
-    font-size: 1.1rem !important;
-    line-height: 1.2;
+    font-size: 1.15rem !important;
+    line-height: 1.22;
   }
 
   .page:first-of-type .cover-text h3 {
-    font-size: 0.85rem !important;
+    font-size: 0.9rem !important;
   }
 }
+
+
 
 
 
