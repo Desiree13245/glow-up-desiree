@@ -396,18 +396,18 @@ img { max-width: 100%; height: auto; }
   .ebook-sub {
     font-size: 0.75rem !important;
   }
+}
 
-  /* Ocultar flechas del carrusel solo en móvil */
-  
 /* Estilo general del menú arriba */
 .top-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3.5rem; /* espacio entre los elementos */
+  gap: 3.5rem; /*espacio entre los elementos*/
   padding: 20px 0;
   width: 100%;
 }
+
 
 /* “Inicio” (botón del dropdown) + enlaces Blog y Contacto */
 .dropbtn,
@@ -440,6 +440,8 @@ img { max-width: 100%; height: auto; }
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
+
+
 /* Hover: subrayado completo */
 .dropbtn:hover::after,
 .top-nav > a.nav-link:hover::after {
@@ -457,15 +459,15 @@ img { max-width: 100%; height: auto; }
   position: relative;
   display: inline-block;
 }
-
 /* Caja del menú desplegable (ESCRITORIO) */
+/* AQUÍ SE CONTROLA SI BAJA HACIA ABAJO */
 .dropdown-content {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 100%;              /* siempre hacia abajo */
+  top: 100%;              /* SIEMPRE HACIA ABAJO */
   left: 50%;
-  transform: translateX(-50%);   /* centrado perfecto */
+  transform: translateX(-50%);   /* CENTRADO PERFECTO */
   background-color: rgba(255,255,255,0.95);
   border-radius: 10px;
   min-width: 200px;
@@ -500,6 +502,27 @@ img { max-width: 100%; height: auto; }
   from { opacity: 0; transform: translate(-50%, -10px); }
   to   { opacity: 1; transform: translate(-50%, 0); }
 }
+/* ======= MEDIA QUERIES ======= */
+@media (max-width: 480px) {
+  .logo-left,.logo-right { height:40px; }
+  .mag-header h1 { font-size:1.6rem; margin:0 0.5rem; }
+  .gallery img{width:calc(50% - 0.5rem);}
+}
+
+@media (max-width: 480px) {
+  .logo-left,.logo-right{height:35px;}
+  .mag-header h1{font-size:1.4rem; margin:0 0.5rem;}
+  .gallery img{width:100%;}
+  .top-nav{
+    flex-direction:column;
+    gap:0.5rem;
+  }
+  .dropdown-content{
+    position:relative;
+    width:100%;
+  }
+}
+
 
 /* ========== SOLO MÓVIL ========== */
 @media (max-width: 480px) {
@@ -515,11 +538,13 @@ img { max-width: 100%; height: auto; }
     margin: 0 0.5rem;
   }
 
-  /* Menú sigue horizontal, solo más compacto */
+ 
+   /* 2. Menú centrado en horizontal y más pequeñito */
   .top-nav {
     flex-direction: row;
     justify-content: center;
-    gap: 1.4rem;
+    align-items: center;
+    gap: 1.2rem;
     padding: 10px 0;
   }
 
@@ -532,32 +557,38 @@ img { max-width: 100%; height: auto; }
 
   .dropbtn::after,
   .top-nav > a.nav-link::after {
-    transform: scaleX(0.2);
+    transform: scaleX(0.15);
     opacity: 0.5;
   }
 
-  /* Dropdown flotando sobre la portada, NO empuja el contenido */
+  /* 3. Dropdown: se abre ENCIMA de la portada, bajo “Inicio”, en columna */
   .dropdown {
     position: relative;
   }
 
   .dropdown-content {
-    top: 100%;
+    position: absolute;
+    top: 100%;                  /* justo debajo del botón INICIO */
     left: 50%;
     transform: translateX(-50%);
+    display: none;
+    flex-direction: column;
     width: min(220px, 80vw);
-    position: absolute;      /* MUY IMPORTANTE: absolute, no relative */
-    z-index: 9999;
+    text-align: left;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 50;                /* por encima de la portada */
   }
 
   .dropdown-content a {
-    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
   }
 
-  .gallery img {
-    width: calc(50% - 0.5rem); /* si quieres que las fotos se adapten */
+  .dropdown.show .dropdown-content {
+    display: flex;
   }
-}
+
 
 
 
@@ -987,6 +1018,7 @@ img { max-width: 100%; height: auto; }
 }
 
   
+
 
 
 
