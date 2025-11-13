@@ -358,9 +358,22 @@ img { max-width: 100%; height: auto; }
 }
 
 
+@media (max-width: 600px) {
+.ebooks-shelf {
+gap: 1rem;
+  }
+    .ebook-card {
+    width: calc(50% - 0.8rem);  /* dos por fila */
+    padding: 0.7rem 0.6rem 0.9rem;
+  }
+ .ebook-title {
+    font-size: 0.85rem;
+  }
 
-
-
+  .ebook-sub {
+    font-size: 0.75rem;
+  }
+}
 
 
 
@@ -896,6 +909,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
