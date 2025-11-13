@@ -359,7 +359,7 @@ img { max-width: 100%; height: auto; }
 
 
 /* ===== SOLO MÓVIL – AJUSTE EBOOKS ===== */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
   /* estantería un poco más compacta */
   .ebooks-shelf {
@@ -508,7 +508,7 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ======= MEDIA QUERIES ======= */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .logo-left,.logo-right { height:40px; }
   .mag-header h1 { font-size:1.6rem; margin:0 0.5rem; }
   .gallery img{width:calc(50% - 0.5rem);}
@@ -676,7 +676,7 @@ img { max-width: 100%; height: auto; }
 }
 
 /* En móvil, quitar el float para que se apile */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .post-media.side {
     float: none;
     width: 100%;
@@ -775,7 +775,7 @@ img { max-width: 100%; height: auto; }
 
 
 /* ===== AJUSTES SOLO PARA MÓVIL ===== */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
   /* 1. Cabecera: quitamos logos laterales y hacemos el título más pequeño */
   .logo-left,
@@ -864,7 +864,7 @@ img { max-width: 100%; height: auto; }
 
 
 /* ===== AJUSTES HERO SOLO PARA MÓVIL ===== */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
   /* Quitamos la altura mínima gigante en móvil */
   .page,
@@ -924,6 +924,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
