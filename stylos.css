@@ -63,6 +63,30 @@ img { max-width: 100%; height: auto; }
 .logo-left { left: 5%; }
 .logo-right { right: 5%; }
 
+
+/* ===== LOGO EN EL HERO SOLO PARA MÓVIL ===== */
+
+/* por defecto oculto (PC y tablets) */
+.hero-logo-mobile {
+  display: none;
+}
+
+/* solo se muestra en pantallas pequeñas */
+@media (max-width: 600px) {
+  .hero-logo-mobile {
+    display: inline-block;
+    width: 26px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 6px;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.25));
+  }
+}
+
+
+
+
+
 /* ======= FLIPBOOK ======= */
 .flipbook {
   perspective: 2000px;
@@ -888,6 +912,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
