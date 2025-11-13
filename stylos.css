@@ -189,7 +189,7 @@ img { max-width: 100%; height: auto; }
 }
 
 /* Móvil: mover abajo */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .side-arrow {
     top: auto;
     bottom: 25px;
@@ -361,36 +361,47 @@ img { max-width: 100%; height: auto; }
 /* ===== SOLO MÓVIL – AJUSTE EBOOKS ===== */
 @media (max-width: 480px) {
 
-  /* estantería un poco más compacta */
+/* El carrusel no hace falta en móvil → lo alineamos normal */
   .ebooks-shelf {
-    gap: 0.9rem;
-    padding: 0.5rem 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
   }
 
-  /* dos libros por fila, más pequeñitos */
+  /* Cada tarjeta será 2 por fila */
   .ebook-card {
-    width: calc(50% - 1rem);   /* 2 por fila */
-    padding: 0.6rem 0.5rem 0.8rem;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    width: calc(50% - 1rem) !important;
+    padding: 0.6rem 0.5rem 0.9rem !important;
+    border-radius: 12px;
   }
 
-  /* la portada se adapta al ancho de la tarjeta */
+ /* Imagen más pequeña y proporcionada */
   .ebook-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    object-fit: cover;
   }
 
+  /* Títulos más pequeños */
   .ebook-title {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
+    line-height: 1.1;
   }
 
   .ebook-sub {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
+  }
+
+  /* Ocultar flechas del carrusel solo en móvil */
+  .side-arrow {
+    display: none !important;
   }
 }
-
 
 
 
@@ -924,6 +935,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
