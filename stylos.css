@@ -350,21 +350,7 @@ img { max-width: 100%; height: auto; }
 }
 
 
-/* Móvil: 2 y 1 (más pequeños) */
-@media (max-width: 600px) {
-  .ebooks-grid .ebook-card {
-    flex: 0 1 calc(50% - 1rem);
-  }
 
-  .ebooks-grid .ebook-card img {
-    width: 100%;
-    height: auto;
-  }
-
-  .ebooks-grid .ebook-card span {
-    font-size: 0.85rem;
-  }
-}
 
 
 
@@ -752,8 +738,6 @@ img { max-width: 100%; height: auto; }
 
 
 
-
-
 /* ===== AJUSTES SOLO PARA MÓVIL ===== */
 @media (max-width: 600px) {
 
@@ -833,61 +817,56 @@ img { max-width: 100%; height: auto; }
   .side-arrow.right {
     right: 10px;
   }
+
+  /* 5. HERO: que la imagen quede bien dentro de la tarjeta */
+ 
+  
 }
 
-  /* HERO: que la imagen quede bien dentro de la tarjeta */
+
+/* ===== AJUSTE TARJETA DE PORTADA EN MÓVIL ===== */
+@media (max-width: 600px) {
+
+  /* Quita el espacio gigante debajo de la foto */
   .page:first-of-type {
-    padding: 1.2rem 1rem 2rem;   /* menos hueco alrededor */
+    padding: 0.8rem 0.8rem 1rem !important;
   }
 
   .page:first-of-type .cover {
+    margin: 0 auto;
+    width: 100%;
     border-radius: 20px;
-    overflow: hidden;            /* la imagen no se sale de la tarjeta */
+    padding-bottom: 0 !important;
   }
 
+  /* La imagen debe ocupar toda la tarjeta y estar pegada arriba */
   .page:first-of-type .cover img {
     width: 100%;
     height: auto;
-    display: block;
     object-fit: cover;
+    display: block;
+    margin-bottom: 0 !important;
   }
 
+  /* Ajustar el texto encima para que no tape demasiado */
   .page:first-of-type .cover-text {
-    left: 1.2rem;
-    right: 1.2rem;
-    bottom: 1.2rem;
-    padding: 0.7rem 0.9rem;
+    bottom: 0.8rem !important;
+    padding: 0.5rem 0.8rem !important;
   }
 
   .page:first-of-type .cover-text h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem !important;
+    line-height: 1.2;
   }
 
   .page:first-of-type .cover-text h3 {
-    font-size: 0.9rem;
+    font-size: 0.85rem !important;
   }
-
-  
-
-
- 
+}
 
 
-  .cover-text {
-    padding: 0.6rem 0.8rem;
-  }
 
-  .cover-text h2 {
-    font-size: 1.3rem;      /* Vol. 1 más pequeño */
-  }
 
-  .cover-text h3 {
-    font-size: 0.9rem;
-  }
-
-  .cover-text p {
-    font-size: 0.8rem;
-  }
 
 
 
