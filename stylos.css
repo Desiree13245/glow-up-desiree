@@ -66,20 +66,24 @@ img { max-width: 100%; height: auto; }
 
 /* ===== LOGO EN EL HERO SOLO PARA MÓVIL ===== */
 
-/* por defecto oculto (PC y tablets) */
-.hero-logo-mobile {
-  display: none;
-}
-
-/* solo se muestra en pantallas pequeñas */
 @media (max-width: 600px) {
+
   .hero-logo-mobile {
-    display: inline-block;
-    width: 26px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 45px;           /* tamaño más pequeño */
     height: auto;
-    vertical-align: middle;
-    margin-right: 6px;
-    
+    opacity: 0.85;         /* un poquito suave para que no moleste */
+    z-index: 10;
+    display: block;
+  }
+
+  /* pero oculto en escritorio */
+  @media (min-width: 601px) {
+    .hero-logo-mobile {
+      display: none !important;
+    }
   }
 }
 
@@ -687,7 +691,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .footer h3 {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #ff2d88;
   margin-bottom: 0.5rem;
   letter-spacing: 2px;
@@ -912,6 +916,7 @@ img { max-width: 100%; height: auto; }
 
 
   
+
 
 
 
