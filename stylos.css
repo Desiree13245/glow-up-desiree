@@ -874,7 +874,7 @@ img { max-width: 100%; height: auto; }
     width: 48%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 5px;
   }
 
  
@@ -895,6 +895,7 @@ img { max-width: 100%; height: auto; }
   .cover-text p {
     font-size: 0.8rem;
   }
+
 
 
 
