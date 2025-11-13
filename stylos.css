@@ -404,17 +404,179 @@ img { max-width: 100%; height: auto; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3.5rem; /*espacio entre los elementos*/
+  gap: 3.5rem; /* espacio entre los elementos */
   padding: 20px 0;
   width: 100%;
 }
 
+/* “Inicio” (botón del dropdown) + enlaces Blog y Contacto */
+.dropbtn,
+.top-nav > a.nav-link {
+  background: transparent;
+  border: none;
+  color: #ff2d88;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  position: relative;
+  padding-bottom: 0.4rem;
+  cursor: pointer;
+}
+
+/* Línea debajo */
+.dropbtn::after,
+.top-nav > a.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 110%;
+  height: 1px;
+  background: #ff2d88;
+  transform-origin: left;
+  transform: scaleX(0.25);
+  opacity: 0.35;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hover: subrayado completo */
+.dropbtn:hover::after,
+.top-nav > a.nav-link:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
 
 /* Enlaces sin subrayado feo por defecto */
 .top-nav a {
   text-decoration: none;
 }
+
+/* ==== Dropdown desplegable ==== */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
+
+/* Caja del menú desplegable (ESCRITORIO) */
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;              /* siempre hacia abajo */
+  left: 50%;
+  transform: translateX(-50%);   /* centrado perfecto */
+  background-color: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: left;
+  z-index: 20;
+}
+
+/* Estilo enlaces del menú */
+.dropdown-content a {
+  padding: 0.6rem 1rem;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffd6e9;
+  color: #ff2d88;
+}
+
+/* Activar menú */
+.dropdown.show .dropdown-content {
+  display: block;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ========== SOLO MÓVIL ========== */
+@media (max-width: 480px) {
+
+  /* logos y título un poco más pequeños pero visibles */
+  .logo-left,
+  .logo-right {
+    height: 35px;
+  }
+
+  .mag-header h1 {
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+  }
+
+  /* Menú sigue horizontal, solo más compacto */
+  .top-nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.4rem;
+    padding: 10px 0;
+  }
+
+  .dropbtn,
+  .top-nav > a.nav-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    padding-bottom: 0.2rem;
+  }
+
+  .dropbtn::after,
+  .top-nav > a.nav-link::after {
+    transform: scaleX(0.2);
+    opacity: 0.5;
+  }
+
+  /* Dropdown flotando sobre la portada, NO empuja el contenido */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(220px, 80vw);
+    position: absolute;      /* MUY IMPORTANTE: absolute, no relative */
+    z-index: 9999;
+  }
+
+  .dropdown-content a {
+    font-size: 0.85rem;
+  }
+
+  .gallery img {
+    width: calc(50% - 0.5rem); /* si quieres que las fotos se adapten */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+/* Enlaces sin subrayado feo por defecto */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -10px); }
   to   { opacity: 1; transform: translate(-50%, 0); }
@@ -793,107 +955,10 @@ img { max-width: 100%; height: auto; }
   }
 }
 
-/* Estilo general del menú arriba */
-.top-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3.5rem; /*espacio entre los elementos*/
-  padding: 20px 0;
-  width: 100%;
-}
-
-
-/* “Inicio” (botón del dropdown) + enlaces Blog y Contacto */
-.dropbtn,
-.top-nav > a.nav-link {
-  background: transparent;
-  border: none;
-  color: #ff2d88;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  position: relative;
-  padding-bottom: 0.4rem;
-  cursor: pointer;
-}
-
-/* Línea fina debajo (estilo imagen negra) */
-
-/* Línea debajo */
-.dropbtn::after,
-.top-nav > a.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 110%;
-  height: 1px;
-  background: #ff2d88;
-  transform-origin: left;
-  transform: scaleX(0.25);
-  opacity: 0.35;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
 
 
 
-/* Hover: subrayado completo */
-.dropbtn:hover::after,
-.top-nav > a.nav-link:hover::after {
-  transform: scaleX(1);
-  opacity: 1;
-}
 
-/* Enlaces sin subrayado feo por defecto */
-.top-nav a {
-  text-decoration: none;
-}
-
-/* ==== Dropdown desplegable ==== */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* AQUÍ SE CONTROLA SI BAJA HACIA ABAJO */
-.dropdown-content {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;              /* SIEMPRE HACIA ABAJO */
-  left: 50%;
-  transform: translateX(-50%);   /* CENTRADO PERFECTO */
-  background-color: rgba(255,255,255,0.95);
-  border-radius: 10px;
-  min-width: 200px;
-  padding: 0.5rem 0;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  text-align: left;
-  z-index: 20;
-}
-
-/* Estilo enlaces del menú */
-.dropdown-content a {
-  padding: 0.6rem 1rem;
-  color: #333;
-  text-decoration: none;
-  display: block;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #ffd6e9;
-  color: #ff2d88;
-}
-
-/* Activar menú */
-.dropdown.show .dropdown-content {
-  display: block;
-  animation: fadeIn 0.25s ease forwards;
-}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -10px); }
@@ -922,6 +987,7 @@ img { max-width: 100%; height: auto; }
 }
 
   
+
 
 
 
