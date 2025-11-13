@@ -825,42 +825,41 @@ img { max-width: 100%; height: auto; }
 
 
 
-/* ===== AJUSTES HERO SOLO PARA MÓVIL ===== */
+/* ===== AJUSTES HERO SOLO PARA MÓVIL — VERSIÓN FINAL ===== */
 @media (max-width: 600px) {
 
-  /* Quitar espacio extra de toda la página */
-  .page,
-  .page:first-of-type {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+  /* Eliminar TODOS los espacios extra de todas las páginas */
+  .page {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* Quitar espacios de contenedores padres del hero */
+  /* Primera página (hero) sin huecos */
+  .page:first-of-type {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Contenedores internos: sin márgenes ni padding */
   .page .content-box,
   .page-card,
   .hero-card,
   .cover {
-    margin: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
     height: auto !important;
   }
 
-  /* Hero sin aire alrededor */
-  .page:first-of-type {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* Contenedor de la tarjeta del hero */
+  /* La tarjeta del hero ajustada completamente */
   .page:first-of-type .cover {
-    width: 100%;
-    margin: 0 auto !important;
+    width: 100% !important;
+    margin: 0 !important;
     padding: 0 !important;
-    border-radius: 20px;
-    overflow: hidden; /* evita huecos blancos */
+    border-radius: 25px;
+    overflow: hidden;
   }
 
-  /* Imagen pegada arriba, sin margen */
+  /* Imagen sin huecos arriba ni abajo */
   .page:first-of-type .cover img {
     width: 100%;
     height: auto;
@@ -870,22 +869,31 @@ img { max-width: 100%; height: auto; }
     padding: 0 !important;
   }
 
-  /* Texto del hero más ajustado */
+  /* Bloque del texto posicionando correctamente */
   .page:first-of-type .cover-text {
-    bottom: 1rem !important;
     left: 1rem !important;
     right: 1rem !important;
+    bottom: 1rem !important;
+    padding: 0.6rem 0.8rem !important;
     margin: 0 !important;
-    padding: 0.6rem 0.9rem !important;
   }
 
+  /* Ajuste tipografías */
   .page:first-of-type .cover-text h2 {
     font-size: 1.15rem !important;
-    line-height: 1.22;
+    line-height: 1.25;
   }
 
   .page:first-of-type .cover-text h3 {
     font-size: 0.9rem !important;
+  }
+
+  /* IMPORTANTE: quita espacio creado por transición de scroll */
+  .page-wrapper,
+  .swiper-slide,
+  .slider-container {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
