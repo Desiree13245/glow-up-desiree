@@ -502,134 +502,6 @@ img { max-width: 100%; height: auto; }
   from { opacity: 0; transform: translate(-50%, -10px); }
   to   { opacity: 1; transform: translate(-50%, 0); }
 }
-/* ======= MEDIA QUERIES ======= */
-@media (max-width: 480px) {
-  .logo-left,.logo-right { height:40px; }
-  .mag-header h1 { font-size:1.6rem; margin:0 0.5rem; }
-  .gallery img{width:calc(50% - 0.5rem);}
-}
-
-@media (max-width: 480px) {
-  .logo-left,.logo-right{height:35px;}
-  .mag-header h1{font-size:1.4rem; margin:0 0.5rem;}
-  .gallery img{width:100%;}
-  .top-nav{
-    flex-direction:column;
-    gap:0.5rem;
-  }
-  .dropdown-content{
-    position:relative;
-    width:100%;
-  }
-}
-
-
-/* ========== SOLO MÓVIL ========== */
-@media (max-width: 480px) {
-
-  /* logos y título un poco más pequeños pero visibles */
-  .logo-left,
-  .logo-right {
-    height: 35px;
-  }
-
-  .mag-header h1 {
-    font-size: 1.4rem;
-    margin: 0 0.5rem;
-  }
-
- 
-   /* 2. Menú centrado en horizontal y más pequeñito */
-  .top-nav {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2rem;
-    padding: 10px 0;
-  }
-
-  .dropbtn,
-  .top-nav > a.nav-link {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    padding-bottom: 0.2rem;
-  }
-
-  .dropbtn::after,
-  .top-nav > a.nav-link::after {
-    transform: scaleX(0.15);
-    opacity: 0.5;
-  }
-
-  /* 3. Dropdown: se abre ENCIMA de la portada, bajo “Inicio”, en columna */
-  .dropdown {
-    position: relative;
-  }
-
-  .dropdown-content {
-    position: absolute;
-    top: 100%;                  /* justo debajo del botón INICIO */
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    flex-direction: column;
-    width: min(220px, 80vw);
-    text-align: left;
-    background-color: rgba(255,255,255,0.95);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    z-index: 50;                /* por encima de la portada */
-  }
-
-  .dropdown-content a {
-    padding: 0.5rem 0.9rem;
-  }
-
-  .dropdown.show .dropdown-content {
-    display: flex;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-/* Enlaces sin subrayado feo por defecto */
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -10px); }
-  to   { opacity: 1; transform: translate(-50%, 0); }
-}
-
-/* ======= MEDIA QUERIES ======= */
-@media (max-width: 480px) {
-  .logo-left,.logo-right { height:40px; }
-  .mag-header h1 { font-size:1.6rem; margin:0 0.5rem; }
-  .gallery img{width:calc(50% - 0.5rem);}
-}
-
-@media (max-width: 480px) {
-  .logo-left,.logo-right{height:35px;}
-  .mag-header h1{font-size:1.4rem; margin:0 0.5rem;}
-  .gallery img{width:100%;}
-  .top-nav{
-    flex-direction:column;
-    gap:0.5rem;
-  }
-
-/*para el blog*/
 
 /* ===== BLOG WRAPPER ===== */
 .blog-wrap {
@@ -767,19 +639,6 @@ img { max-width: 100%; height: auto; }
   clear: both;
 }
 
-/* En móvil, quitar el float para que se apile */
-@media (max-width: 480px) {
-  .post-media.side {
-    float: none;
-    width: 100%;
-    margin: 0 0 0.8rem 0;
-    max-width: 420px;
-  }
-}
-.post-media.side img {
-  border: 2px solid rgba(255,45,136,0.25);
-}
-
 
 
 .footer {
@@ -860,49 +719,66 @@ img { max-width: 100%; height: auto; }
   transform: scale(1.1);
 }
 
-
-
-
-
-
-
-/* ===== AJUSTES SOLO PARA MÓVIL ===== */
+SOLO MÓVIL (≤ 480px) – TODO LO IMPORTANTE JUNTO Y ORDENADO
+   ========================================================= */
 @media (max-width: 480px) {
 
- 
-  /* Mostrar los dos logos */
+  /* Logos visibles pero más pequeños */
   .logo-left,
   .logo-right {
-    display: block !important;
-    width: 32px !important;   /* tamaño más pequeño */
-    height: auto !important;
+    display: block;
+    height: 35px;
   }
 
- /* Reducir tamaño del título */
+  /* Título más pequeño */
   .mag-header h1 {
-    font-size: 1.15rem !important;
-    letter-spacing: 0.05em;
-    margin-top: 0.3rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
   }
 
-  /* Ajustar el header para que nada se descuadre */
-  .mag-header {
-    padding: 0.4rem 0 0.5rem !important;
-    gap: 0.6rem !important;
-  }
-
-  /* 2. Menú centrado en horizontal y más pequeñito */
+  /* Menú horizontal, centrado y compacto */
   .top-nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.4rem;
     padding: 10px 0;
     transform: scale(0.9);
     margin-top: -4px;
   }
-/* 4. Flechas laterales: más centradas verticalmente */
+
+  .dropbtn,
+  .top-nav > a.nav-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    padding-bottom: 0.2rem;
+  }
+
+  .dropbtn::after,
+  .top-nav > a.nav-link::after {
+    transform: scaleX(0.2);
+    opacity: 0.5;
+  }
+
+  /* Dropdown flotando sobre la portada, sin empujar contenido */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(220px, 80vw);
+    position: absolute;
+    z-index: 9999;
+  }
+
+  .dropdown-content a {
+    font-size: 0.85rem;
+  }
+
+  /* Flechas laterales centradas en vertical en móvil */
   .side-arrow {
     top: 55%;
     bottom: auto;
@@ -910,27 +786,10 @@ img { max-width: 100%; height: auto; }
     font-size: 1.6rem;
   }
 
-  .side-arrow.left {
-    left: 10px;
-  }
+  .side-arrow.left { left: 10px; }
+  .side-arrow.right { right: 10px; }
 
-  .side-arrow.right {
-    right: 10px;
-  }
-
- 
- 
-  
-}
-
-
-
-
-
-/* ===== AJUSTES HERO SOLO PARA MÓVIL ===== */
-@media (max-width: 480px) {
-
-  /* Quitamos la altura mínima gigante en móvil */
+  /* Hero: imagen dentro de la tarjeta sin huecos raros */
   .page,
   .page:first-of-type {
     min-height: auto !important;
@@ -938,7 +797,6 @@ img { max-width: 100%; height: auto; }
     margin: 0 !important;
   }
 
-  /* Contenedores internos del hero sin márgenes ni padding extra */
   .page .content-box,
   .page-card,
   .hero-card,
@@ -948,7 +806,6 @@ img { max-width: 100%; height: auto; }
     height: auto !important;
   }
 
-  /* Tarjeta del hero */
   .page:first-of-type .cover {
     width: 100% !important;
     margin: 0 !important;
@@ -957,7 +814,6 @@ img { max-width: 100%; height: auto; }
     overflow: hidden;
   }
 
-  /* Imagen bien pegada, sin huecos arriba/abajo */
   .page:first-of-type .cover img {
     width: 100%;
     height: auto;
@@ -967,7 +823,6 @@ img { max-width: 100%; height: auto; }
     padding: 0 !important;
   }
 
-  /* Bloque de texto del hero */
   .page:first-of-type .cover-text {
     left: 1rem !important;
     right: 1rem !important;
@@ -984,41 +839,54 @@ img { max-width: 100%; height: auto; }
   .page:first-of-type .cover-text h3 {
     font-size: 0.9rem !important;
   }
-}
 
-
-
-
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -10px); }
-  to   { opacity: 1; transform: translate(-50%, 0); }
-}
-
-/* ======= MEDIA QUERIES ======= */
-@media (max-width: 480px) {
-  .logo-left,.logo-right { height:40px; }
-  .mag-header h1 { font-size:1.6rem; margin:0 0.5rem; }
-  .gallery img{width:calc(50% - 0.5rem);}
-}
-
-@media (max-width: 480px) {
-  .logo-left,.logo-right{height:35px;}
-  .mag-header h1{font-size:1.4rem; margin:0 0.5rem;}
-  .gallery img{width:100%;}
-  .top-nav{
-    flex-direction:column;
-    gap:0.5rem;
+  /* Galerías: dos columnas en móvil */
+  .gallery img {
+    width: calc(50% - 0.5rem);
   }
-  .dropdown-content{
-    position:relative;
-    width:100%;
+
+  /* Ebooks: 2 por fila, más pequeños */
+  .ebooks-shelf {
+    gap: 1.2rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  .ebook-card {
+    width: calc(50% - 1rem);
+    padding: 0.6rem 0.5rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .ebook-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .ebook-title {
+    font-size: 0.85rem;
+    line-height: 1.1;
+  }
+
+  .ebook-sub {
+    font-size: 0.75rem;
+  }
+
+  /* Blog: quitar float de la imagen lateral */
+  .post-media.side {
+    float: none;
+    width: 100%;
+    margin: 0 0 0.8rem 0;
+    max-width: 420px;
+  }
+
+  .post-media.side img {
+    border: 2px solid rgba(255,45,136,0.25);
   }
 }
-
-  
-
 
 
 
