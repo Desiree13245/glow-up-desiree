@@ -829,7 +829,7 @@ img { max-width: 100%; height: auto; }
 
   /* Quita el espacio gigante debajo de la foto */
   .page:first-of-type {
-    padding: 0.8rem 0.8rem 1rem !important;
+    padding: 0.2rem 0.2rem 0.85rem !important;
   }
 
   .page:first-of-type .cover {
@@ -863,6 +863,7 @@ img { max-width: 100%; height: auto; }
     font-size: 0.85rem !important;
   }
 }
+
 
 
 
