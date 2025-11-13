@@ -733,10 +733,17 @@ img { max-width: 100%; height: auto; }
 }
 
 
+
+
+
+
+
+
+
 /* ===== AJUSTES SOLO PARA MÓVIL ===== */
 @media (max-width: 600px) {
 
-  /* 1. Cabecera más limpia: quitamos logos grandes y hacemos más pequeño el título */
+  /* 1. Cabecera: quitamos logos laterales y hacemos el título más pequeño */
   .logo-left,
   .logo-right {
     display: none;
@@ -747,44 +754,79 @@ img { max-width: 100%; height: auto; }
     margin: 0.5rem 0 0.2rem;
   }
 
-  /* 2. Menú centrado pero más pequeñito */
+  /* 2. Menú centrado en horizontal y más pequeñito */
   .top-nav {
-    flex-direction: row !important;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 1.2rem;
     padding: 10px 0;
-  
+  }
 
-  /* Tamaño más pequeño */
   .dropbtn,
-  .top-nav a.nav-link {
-    font-size: 0.75rem !important;
+  .top-nav > a.nav-link {
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
     padding-bottom: 0.2rem;
   }
-   /* Línea inferior más pequeña también */
+
   .dropbtn::after,
-  .top-nav a.nav-link::after {
+  .top-nav > a.nav-link::after {
     transform: scaleX(0.15);
     opacity: 0.5;
   }
 
-  /* EL DESPLEGABLE sigue vertical */
+  /* 3. Dropdown: se abre ENCIMA de la portada, bajo “Inicio”, en columna */
+  .dropdown {
+    position: relative;
+  }
+
   .dropdown-content {
-    right: 0;
-    left: auto;
-    width: 150px;
-    text-align: right;
+    position: absolute;
+    top: 100%;                  /* justo debajo del botón INICIO */
+    left: 50%;
+    transform: translateX(-50%);
     display: none;
+    flex-direction: column;
+    width: min(220px, 80vw);
+    text-align: left;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 50;                /* por encima de la portada */
+  }
+
+  .dropdown-content a {
+    padding: 0.5rem 0.9rem;
+  }
+
+  .dropdown.show .dropdown-content {
+    display: flex;
+  }
+
+  /* 4. Flechas laterales: más centradas verticalmente */
+  .side-arrow {
+    top: 55%;
+    bottom: auto;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+  }
+
+  .side-arrow.left {
+    left: 10px;
+  }
+
+  .side-arrow.right {
+    right: 10px;
   }
 }
 
-  /* 3. Portada: foto grande, texto más pequeño */
-  .page:first-of-type .cover img {
-    min-height: 260px;
-    width: 100%;
-    object-fit: cover;
-  }
+
+  
+
+
+ 
+
 
   .cover-text {
     padding: 0.6rem 0.8rem;
@@ -802,22 +844,7 @@ img { max-width: 100%; height: auto; }
     font-size: 0.8rem;
   }
 
-  /* 4. Flechas laterales: centradas verticalmente, no tan abajo */
-  .side-arrow {
-    top: 55%;
-    bottom: auto;
-    transform: translateY(-50%);
-    font-size: 1.6rem;
-  }
 
-  .side-arrow.left {
-    left: 10px;
-  }
-
-  .side-arrow.right {
-    right: 10px;
-  }
-}
 
 /* ======== CENTRAR IMAGEN DEL INICIO SOLO EN MÓVIL ======== */
 @media (max-width: 768px) {
@@ -857,6 +884,8 @@ img { max-width: 100%; height: auto; }
     align-items: center !important;
   }
 }
+
+
 
 
 
