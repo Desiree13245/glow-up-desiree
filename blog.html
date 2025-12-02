@@ -78,10 +78,23 @@ function toggleDropdown() {
     <p class="post-meta"><time itemprop="datePublished" datetime="2025-12-02">02 dic 2025</time></p>
   </header>
 
-  <div style="display:flex; gap:20px; align-items:flex-start;">
+  <!-- Estilos solo para este post (responsive móvil) -->
+  <style>
+    @media (max-width: 768px) {
+      .post-flex-nila {
+        flex-direction: column !important;
+      }
+      .post-flex-nila .video-box-nila {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  </style>
+
+  <div class="post-flex-nila" style="display:flex; gap:20px; align-items:flex-start;">
 
     <!-- CONTENEDOR PARA LIMITAR EL TAMAÑO DEL VIDEO -->
-    <div style="width:280px; flex-shrink:0;">
+    <div class="video-box-nila" style="width:280px; flex-shrink:0;">
       <div style="position:relative; width:100%; padding-top:180%; overflow:hidden; border-radius:10px;">
         <blockquote class="tiktok-embed"
           data-video-id="7579286616901012758"
@@ -94,19 +107,14 @@ function toggleDropdown() {
 
       <p style="text-align:center; margin-top:5px;">
         <a href="https://www.tiktok.com/@desimoncada/video/7579286616901012758" target="_blank">
-          Aqui puedes ver como se prepara 💙
+          Aquí puedes ver cómo se prepara 💙
         </a>
       </p>
     </div>
 
-    <!-- TEXTO A LA DERECHA -->
+    <!-- TEXTO A LA DERECHA / DEBAJO EN MÓVIL -->
     <div class="post-body pencil" itemprop="articleBody" style="flex:1;">
       <ul>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <li>Aclara e iguala el tono, es decir reduce manchas.</li>
         <li>Calma la irritación y el enrojecimiento.</li>
         <li>Ayuda a reducir el acné por sus propiedades antibacterianas.</li>
@@ -114,10 +122,11 @@ function toggleDropdown() {
         <li>Aporta luminosidad natural.</li>
         <li>Es ideal para piel sensible porque es suave y respetuoso.</li>
       </ul>
-      </div>
+    </div>
 
   </div>
 </article>
+
 
 
 <!-- ===== POST 2 ===== -->
@@ -250,6 +259,7 @@ póntelo un lunes para ir a la oficina y camina con la energía por todo lo alto
 
 </body>
 </html>
+
 
 
 
