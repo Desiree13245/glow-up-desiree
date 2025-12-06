@@ -893,6 +893,100 @@ img { max-width: 100%; height: auto; }
 
 
 
+/* ======= VIDEO PORTADA ======= */
+
+/* Ajuste general de la página 1 (portada) */
+.page:first-of-type {
+  padding: 0;
+  margin: 1rem 0 0 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Contenedor del video */
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100vh;       /* ocupa alto de pantalla */
+  margin: 0;
+  padding: 0;
+}
+
+/* El vídeo como fondo */
+.cover-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;          /* por debajo del texto, pero por encima del fondo */
+}
+
+/* Texto encima del vídeo */
+.cover-text-hero {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.cover-text-hero h2,
+.cover-text-hero h3,
+.cover-text-hero p {
+  margin: 0.25rem 0;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* ===== MÓVIL pantalla completa ===== */
+@media (max-width: 480px) {
+
+  /* altura a la portada en móvil */
+  .page:first-of-type {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .page:first-of-type .cover {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .cover-text-hero {
+    bottom: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .cover-text-hero h2 {
+    font-size: 1.1rem;
+    line-height: 1.25;
+  }
+
+  .cover-text-hero h3 {
+    font-size: 0.9rem;
+  }
+
+  .cover-text-hero p {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+
 
 
 
