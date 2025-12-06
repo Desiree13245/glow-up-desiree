@@ -980,71 +980,62 @@ img { max-width: 100%; height: auto; }
 /* ========= SOLO PORTADA EN MÓVIL ========= */
 
 
+/* ========= PORTADA FULLSCREEN REAL EN MÓVIL ========= */
 @media (max-width: 480px) {
 
-  /* La primera página se ensancha hasta cubrir todo el viewport */
+  /* La primera página se convierte en un bloque a pantalla completa */
   .page:first-of-type {
     position: relative;
-    width: 100vw !important;                    /* ancho de la ventana */
-    left: calc(-7.5vw) !important;              /*  (100 - 85) / 2 = 7.5  → compensar el 85% de flipbook */
+    padding: 0 !important;
     margin: 0 !important;
-
+    border-radius: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
+
+    height: 100vh !important;
     min-height: 100vh !important;
+
+    overflow: hidden !important;     /* <- IMPORTANTE */
+  }
+
+  /* El contenedor del video */
+  .page:first-of-type .cover {
+    position: relative;
+    width: 100%;
+    height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
     overflow: hidden !important;
   }
 
-  /* Contenedor del vídeo a pantalla completa */
-  .page:first-of-type .cover {
-    width: 100%;
-    height: 100vh !important;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    overflow: hidden;
-    position: relative;
-  }
-
-  /* Vídeo rellenando toda la pantalla, centrado */
+  /* El video ocupa TODA la pantalla móvil, sí o sí */
   .page:first-of-type .cover-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
   }
 
-  /* Texto encima del vídeo */
+  /* Texto superpuesto centrado */
   .page:first-of-type .cover-text {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    bottom: 1rem;
-    padding: 0.7rem 0.9rem;
-    border-radius: 12px;
-    background: rgba(0,0,0,0.35);
+    bottom: 1rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+
+    background: rgba(0,0,0,0.35) !important;
+    padding: 0.8rem !important;
+    border-radius: 12px !important;
     backdrop-filter: blur(6px);
   }
-
-  .page:first-of-type .cover-text h2 {
-    font-size: 1.1rem;
-  }
-
-  .page:first-of-type .cover-text h3 {
-    font-size: 0.9rem;
-  }
-
-  .page:first-of-type .cover-text p {
-    font-size: 0.8rem;
-  }
 }
+
+
 
 
 
