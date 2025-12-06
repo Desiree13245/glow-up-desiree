@@ -951,20 +951,7 @@ img { max-width: 100%; height: auto; }
 /* ===== MÓVIL pantalla completa ===== */
 @media (max-width: 480px) {
 
-  .page:first-of-type {
-    min-height: 100vh !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .page:first-of-type .cover {
-    height: 100vh !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-  }
-
-  .cover-video {
+ .cover-video {
     height: 100vh !important;
     width: 100% !important;
     object-fit: cover !important;
@@ -987,6 +974,68 @@ img { max-width: 100%; height: auto; }
   }
   .cover-text p {
     font-size: 0.8rem !important;
+  }
+}
+
+/* ========= SOLO PORTADA EN MÓVIL ========= */
+@media (max-width: 480px) {
+
+  /* La primera página se hace ancho completo, sin tarjeta */
+  .page:first-of-type {
+    position: relative;
+    width: 100vw;              /* ocupa todo el ancho de la ventana */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;        
+    margin-right: -50vw;
+
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  /* Contenedor del vídeo a pantalla completa */
+  .page:first-of-type .cover {
+    width: 100%;
+    height: 100vh !important;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  /* Vídeo rellenando todo, centrado */
+  .page:first-of-type .cover-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+
+  /* Texto del hero centrado y adaptado */
+  .page:first-of-type .cover-text {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    bottom: 1rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .page:first-of-type .cover-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .page:first-of-type .cover-text h3 {
+    font-size: 0.9rem;
+  }
+
+  .page:first-of-type .cover-text p {
+    font-size: 0.8rem;
   }
 }
 
