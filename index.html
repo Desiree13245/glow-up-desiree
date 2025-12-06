@@ -65,7 +65,7 @@
 
 </header>
 <!-- estilos para la portada-->
-</header>
+<head>
   <style>
     .cover {
       position: relative;
@@ -113,10 +113,19 @@
   <section class="page active">
     <div class="cover">
 
-      <!-- VIDEO DE PORTADA -->
-      <video class="cover-video" autoplay muted loop playsinline>
-        <source src="material/imagenes/intro.mp4" type="video/mp4">
-      </video>
+<video 
+  class="cover-video" 
+  autoplay 
+  muted 
+  loop 
+  playsinline 
+  webkit-playsinline 
+  preload="auto"
+>
+  <source src="material/imagenes/intro.mp4" type="video/mp4">
+</video>
+
+
 
       <!-- TEXTO POR ENCIMA DEL VIDEO -->
       <div class="cover-text">
@@ -376,6 +385,7 @@
 
 </body>
 </html>
+
 
 
 
